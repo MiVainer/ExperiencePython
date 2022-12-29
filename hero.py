@@ -1,6 +1,6 @@
 # Функции к вкладке Классы
 
-class Hero():
+class Hero(): # родительский класс для класса SuperHero
     """Класс создания героев для игры"""
     def __init__(self, name, level, race): # В классе def является ни функцией, а методом.
         """initiate our Hero"""
@@ -24,3 +24,21 @@ class Hero():
     def set_health(self, new_health):
         """New health"""
         self.health = new_health
+
+class SuperHero(Hero): # дочерний класс класса Hero
+    """Class to create SuperHero"""
+    def __init__(self, name, level, race, magiclevel):
+        """initiate superhero"""
+        super().__init__(name, level, race)
+        self.magiclevel = magiclevel
+        self.magic = 100
+
+    def makemagic(self):
+        """Use magic"""
+        self.magic -= 10
+
+    def show_hero(self):
+        """Показать параметры героя"""
+        discription = ('\n' + self.name + " Level is: " + str(self.level) + "\nMagic level is: " + str(self.magiclevel) +
+                       "\nRace is: " + self.race + "\nHealth is: " + str(self.health) + '\n' + "Magic is: " + str(self.magic)).title()
+        print(discription)
