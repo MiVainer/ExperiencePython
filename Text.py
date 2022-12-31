@@ -14,3 +14,5 @@ for num, line in enumerate(myfile, 1): #одновременно выводим 
             print("Line № " + str(num) + "  " + line.strip()) #strip позволяет убрать все лишние пробелы
             myfile1.write("Found password: " + line)
 
+myfile.close()
+myfile1.close()
